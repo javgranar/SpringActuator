@@ -10,8 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RestControllerEndpoint(id = "customEndpoint")
 public class CustomEndpoint {
 	
+	@GetMapping("/")
+	public ResponseEntity<String> customEndPointInicial(){
+		return new ResponseEntity<>("EndPoint inicial", HttpStatus.OK);
+	}
+	
 	@GetMapping("/random")
 	public ResponseEntity<String> customEndPoint(){
 		return new ResponseEntity<>("Buenos dias", HttpStatus.OK);
 	}
+	
 }
